@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "loanapi", "loanapi\loanapi.csproj", "{117B0E3B-747D-4ACC-BD52-2817CEA55065}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "loanapi.tests", "loanapi.tests\loanapi.tests.csproj", "{DFE0BF90-542C-472D-BB9A-B4FC2ECA79DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{117B0E3B-747D-4ACC-BD52-2817CEA55065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117B0E3B-747D-4ACC-BD52-2817CEA55065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117B0E3B-747D-4ACC-BD52-2817CEA55065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117B0E3B-747D-4ACC-BD52-2817CEA55065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFE0BF90-542C-472D-BB9A-B4FC2ECA79DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFE0BF90-542C-472D-BB9A-B4FC2ECA79DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFE0BF90-542C-472D-BB9A-B4FC2ECA79DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFE0BF90-542C-472D-BB9A-B4FC2ECA79DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1536C87-81FB-4423-9AD4-68C3170B1D52}
+	EndGlobalSection
+EndGlobal
