@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cart
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>เพิ่มสินค้าลงตะกร้า</h2>
+  <p>
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>รหัสสินค้า</ion-label>
+        <ion-input type="number" [(ngModel)]="productId" placeholder="1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>จำนวน</ion-label>
+        <ion-input type="number" [(ngModel)]="productAmount" placeholder="1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="AddProductToCart()">Add product to cart</button>
+      </ion-item>
+    </ion-list>
+  </p>
+  <h2>ข้อมูลตะกร้าของคุณ</h2>
+  <p>
+    <ion-list>
+      <ion-item>
+        <ion-label>ราคาก่อนลด</ion-label>
+        <ion-label>{{ cartInfo.rawPrice | number }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>ส่วนลด</ion-label>
+        <ion-label>{{ cartInfo.discount | number }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>รวม</ion-label>
+        <ion-label>{{ cartInfo.price | number }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </p>
+  <h2>รายการสินค้า</h2>
+  <p *ngIf="cartInfo.products">
+    <ion-list>
+      <ion-item>
+        <ion-label>ลำดับที่</ion-label>
+        <ion-label>ชื่อสินค้า</ion-label>
+        <ion-label>จำนวน</ion-label>
+        <ion-label>ส่วนลด</ion-label>
+        <ion-label>รวม</ion-label>
+      </ion-item>
+      <ion-item *ngFor="let it of cartInfo.products; let i = index">
+        <ion-label>{{ i + 1 }}</ion-label>
+        <ion-label>{{ it.product.name }}</ion-label>
+        <ion-label>{{ it.amount | number }}</ion-label>
+        <ion-label>{{ it.totalDiscount | number }}</ion-label>
+        <ion-label>{{ it.totalPrice | number }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </p>
+</ion-content>
