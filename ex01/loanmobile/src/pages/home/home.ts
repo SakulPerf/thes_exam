@@ -20,7 +20,7 @@ export class HomePage {
   }
 
   SetRate() {
-    this.http.post("https://localhost:44370/api/loan",
+    this.http.post("https://localhost:5000/api/loan",
     {
         rate: this.rate,
     }).subscribe(
@@ -33,7 +33,7 @@ export class HomePage {
   }
 
   private getServerRate(){
-    this.http.get<number>("https://localhost:44370/api/loan").subscribe(
+    this.http.get<number>("https://localhost:5000/api/loan").subscribe(
       it => {
         this.svRate = it;
       },

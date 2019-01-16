@@ -17,7 +17,7 @@ export class AboutPage {
   }
 
   Calculate() {
-    this.http.post<InterestInfo[]>("https://localhost:44370/api/loan/calculate",
+    this.http.post<InterestInfo[]>("https://localhost:5000/api/loan/calculate",
     {
         volume: this.volume,
         years: this.years
