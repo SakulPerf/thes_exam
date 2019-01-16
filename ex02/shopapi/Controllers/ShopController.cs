@@ -8,7 +8,7 @@ namespace shopapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ShopController : ControllerBase
     {
         // GET api/values
         [HttpGet]
