@@ -5,15 +5,15 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Products</h2>
+  <h2>เพิ่มสินค้าใหม่</h2>
   <p>
     <ion-list>
       <ion-item>
-        <ion-label fixed>Name</ion-label>
+        <ion-label fixed>ชื่อสินค้า</ion-label>
         <ion-input type="name" [(ngModel)]="name" placeholder="iPhone"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>Price</ion-label>
+        <ion-label fixed>ราคาต่อหน่วย</ion-label>
         <ion-input type="number" [(ngModel)]="price" placeholder="1000"></ion-input>
       </ion-item>
       <ion-item>
@@ -21,13 +21,20 @@
       </ion-item>
     </ion-list>
   </p>
+  <h2>รายการสินค้าทั้งหมด</h2>
   <p>
-    All products
     <ion-list>
-      <ion-item *ngFor="let it of products">
-        <ion-label>Id: {{ it.id }}</ion-label>
+      <ion-item>
+        <ion-label>ลำดับที่</ion-label>
+        <ion-label>รหัสสินค้า</ion-label>
+        <ion-label>ชื่อสินค้า</ion-label>
+        <ion-label>ราคาต่อหน่วย</ion-label>
+      </ion-item>
+      <ion-item *ngFor="let it of products; let i = index">
+        <ion-label>{{ i + 1 }}</ion-label>
+        <ion-label>{{ it.id }}</ion-label>
         <ion-label>{{ it.name }}</ion-label>
-        <ion-label>{{ it.price }}</ion-label>
+        <ion-label>{{ it.price | number }}</ion-label>
       </ion-item>
     </ion-list>
   </p>
