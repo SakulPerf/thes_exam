@@ -1,17 +1,24 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Setup</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
+  <h2>Set rate</h2>
   <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Rate</ion-label>
+        <ion-input type="number" [(ngModel)]="rate" placeholder="0"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="SetRate()">Submit</button>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Current rate</ion-label>
+        <ion-label fixed>{{ svRate }}%</ion-label>
+      </ion-item>
+    </ion-list>
   </p>
 </ion-content>

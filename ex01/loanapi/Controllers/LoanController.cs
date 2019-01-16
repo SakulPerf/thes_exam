@@ -15,8 +15,8 @@ namespace loanapi.Controllers
         [HttpGet]
         public double Get() => LoanFacade.Rate;
 
-        [HttpPost("{rate}")]
-        public void Post(double rate) => LoanFacade.Rate = rate;
+        [HttpPost]
+        public void Post([FromBody]SetRateRequest req) => LoanFacade.Rate = req?.Rate ?? 0;
 
         // PUT api/values/5
         [HttpPost("{volume}/{years}")]
