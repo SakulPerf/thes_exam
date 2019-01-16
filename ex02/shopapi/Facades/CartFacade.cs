@@ -9,7 +9,11 @@ namespace shopapi.Facades
     {
         public CartInfo AddProductToCart(CartInfo currentCart, ProductInfo product, int amount)
         {
-            if (currentCart == null)
+            const int MinimumProductAmount = 1;
+            var areArgumentsValid = currentCart != null
+                && product != null
+                && amount >= MinimumProductAmount;
+            if (!areArgumentsValid)
             {
                 return new CartInfo();
             }

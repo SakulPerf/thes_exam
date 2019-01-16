@@ -5,7 +5,8 @@
         public ProductInfo Product { get; }
         public int Amount { get; }
         public double TotalDiscount { get; }
-        public double TotalPrice => (Product.Price * Amount) - TotalDiscount;
+        public double RawPrice => Product.Price * Amount;
+        public double TotalPrice => RawPrice - TotalDiscount;
 
         public CartProduct(ProductInfo product, int amount, double discount = 0)
         {

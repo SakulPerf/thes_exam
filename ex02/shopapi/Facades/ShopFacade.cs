@@ -5,7 +5,7 @@ namespace shopapi.Facades
 {
     public class ShopFacade
     {
-        public void AddNewProduct(IList<ProductInfo> products, ProductInfo product)
+        public IList<ProductInfo> AddNewProduct(IList<ProductInfo> products, ProductInfo product)
         {
             const int MinimumProductPrice = 0;
             var isProductValid = product != null
@@ -13,11 +13,12 @@ namespace shopapi.Facades
                 && product.Price > MinimumProductPrice;
             if (!isProductValid)
             {
-                return;
+                return products;
             }
 
             product.Id = products.Count + 1;
             products.Add(product);
+            return products;
         }
     }
 }
