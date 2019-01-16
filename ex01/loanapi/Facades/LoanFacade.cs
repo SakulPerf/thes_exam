@@ -20,5 +20,17 @@ namespace loanapi.Facades
                 Total = volume + interest,
             };
         }
+
+        public IEnumerable<InterestInfo> GetInterestInfo(double volum, int years)
+        {
+            var result = new List<InterestInfo>();
+            while (years-- > 0)
+            {
+                var interest = GetInterestInfo(volum);
+                result.Add(interest);
+                volum = interest.Total;
+            }
+            return result;
+        }
     }
 }
