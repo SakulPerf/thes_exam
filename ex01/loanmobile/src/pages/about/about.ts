@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+import { InterestInfo } from '../../models/interestInfo';
 
 @Component({
   selector: 'page-about',
@@ -7,8 +9,25 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
+  private volume: number;
+  private years: number;
+  private interests: InterestInfo[] = [];
 
+  constructor(public navCtrl: NavController, public http: HttpClient) {
+  }
+
+  Calculate() {
+    this.http.post<InterestInfo[]>("https://localhost:44370/api/loan/calculate",
+    {
+        volume: this.volume,
+        years: this.years
+    }).subscribe(
+        it => {
+          this.interests = it;
+        }, 
+        error => {
+            console.log(error);
+        });
   }
 
 }

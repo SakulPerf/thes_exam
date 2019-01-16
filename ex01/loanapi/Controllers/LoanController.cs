@@ -19,7 +19,7 @@ namespace loanapi.Controllers
         public void Post([FromBody]SetRateRequest req) => LoanFacade.Rate = req?.Rate ?? 0;
 
         // PUT api/values/5
-        [HttpPost("{volume}/{years}")]
-        public IEnumerable<InterestInfo> Put(double volume, int years) => new LoanFacade().GetInterestInfo(volume, years);
+        [HttpPost("calculate")]
+        public IEnumerable<InterestInfo> Calculate([FromBody]CalculateRequest req) => new LoanFacade().GetInterestInfo(req?.Volume ?? 0, req?.Years ?? 0);
     }
 }
